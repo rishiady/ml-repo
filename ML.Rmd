@@ -1,0 +1,28 @@
+---
+title: "ML Assignment Data  Science"
+author: "Ady"
+date: "Saturday, June 21, 2014"
+output: html_document
+---
+
+
+
+```{r}
+#  Removing the NA's and unwanted attributes
+
+str(trainClean)
+library(nnet)
+
+table(trainClean$classe)
+logisticA = multinom(classe ~., data= trainClean)
+#  Training set accuracy 
+
+
+(4313+2263+2177+1865+2105)/19622 
+
+# test set predictions
+pred<-predict(logisticA, type="class", newdata = testA)
+```
+
+
+
